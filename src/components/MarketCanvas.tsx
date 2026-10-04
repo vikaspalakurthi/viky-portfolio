@@ -61,8 +61,8 @@ export default function MarketCanvas() {
     function seed() {
       streams = [
         {
-          color: "#3ddc97",
-          glow: "rgba(61,220,151,0.55)",
+          color: "#34d399",
+          glow: "rgba(52,211,153,0.55)",
           pts: [],
           base: 0.52,
           amp: 0.16,
@@ -72,8 +72,8 @@ export default function MarketCanvas() {
           fill: true,
         },
         {
-          color: "#4d9fff",
-          glow: "rgba(77,159,255,0.4)",
+          color: "#38bdf8",
+          glow: "rgba(56,189,248,0.4)",
           pts: [],
           base: 0.62,
           amp: 0.11,
@@ -151,8 +151,8 @@ export default function MarketCanvas() {
 
       if (s.fill) {
         const grad = ctx.createLinearGradient(0, height * 0.3, 0, height);
-        grad.addColorStop(0, "rgba(61,220,151,0.16)");
-        grad.addColorStop(1, "rgba(61,220,151,0)");
+        grad.addColorStop(0, "rgba(52,211,153,0.16)");
+        grad.addColorStop(1, "rgba(52,211,153,0)");
         ctx.save();
         ctx.lineTo(width, height);
         ctx.lineTo(0, height);
@@ -199,7 +199,7 @@ export default function MarketCanvas() {
         }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(61,220,151,${p.a})`;
+        ctx.fillStyle = `rgba(52,211,153,${p.a})`;
         ctx.fill();
       }
     }
