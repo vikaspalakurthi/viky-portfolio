@@ -23,7 +23,7 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="group flex items-center gap-2.5">
+        <a href="/" className="group flex items-center gap-2.5">
           <span className="inline-block h-2.5 w-2.5 animate-pulse-dot rounded-full bg-accent shadow-[0_0_12px_var(--tw-shadow-color)] shadow-accent" />
           <span className="mono text-sm font-medium tracking-tight text-ink">
             {site.handle}
@@ -42,7 +42,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="ml-2 rounded-md border border-accent/40 bg-accent/10 px-3.5 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
           >
             Get in touch
