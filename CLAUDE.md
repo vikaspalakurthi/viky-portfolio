@@ -1,11 +1,13 @@
 # CLAUDE.md — project context for Claude Code
 
-Personal portfolio site for **Vikas Palakurthi (Viky)** — positioned as a *technical founder* (engineering depth + product ownership). Dark, cinematic aesthetic. Built to link from his resume.
+Personal portfolio site for **Vikas Palakurthi (Viky)** — positioned as *SRE / DevOps / Observability engineer, Austin TX, open to work* (since v2; founder/trading story kept as the "running services" side-project section). Dark terminal/ops aesthetic from his design artifact. Built to link from his resume.
+
+**Truth rule:** every career claim (years, numbers, roles, tools) must come from the verified fact bank at `C:\Users\palak\Documents\Claude\Code\JobSearch\resume\master-resume.md` (+ skills-inventory.md) or from Viky directly. Never invent metrics.
 
 ## Stack
 - Next.js 14 (App Router) · TypeScript · Tailwind CSS
-- Framer Motion for interactions
-- Self-hosted fonts via `@fontsource` (Inter + JetBrains Mono) — **no Google Fonts fetch** (keep it that way; the build runs offline)
+- Framer Motion + CSS keyframes (globals.css) + one SMIL network (Topology.tsx) for interactions
+- Self-hosted fonts via `@fontsource` (Space Grotesk + JetBrains Mono + Mr Dafoe signature) — **no Google Fonts fetch** (keep it that way; the build runs offline)
 
 ## Commands
 ```bash
@@ -30,12 +32,11 @@ Repo: https://github.com/vikaspalakurthi/viky-portfolio — public; the history 
 `interview-prep/` is **gitignored** — Viky's private interview preparation notes about this project. Never commit it, never reference it from site content.
 
 ## Where content lives — THIS IS THE KEY FILE
-**`src/data/content.ts`** holds ALL copy. Components read only from it; never hardcode content in components. Sections: `site`, `ticker`, `about`, `experience[]`, `projects[]`, `skills[]`, `engineering`, `nav`.
+**`src/data/content.ts`** holds ALL copy. Components read only from it; never hardcode content in components. Sections: `site`, `ticker`, `metrics`, `about`, `skills`, `services`, `careerLog`, `contact`, `footer`, `miniVikas`, `engineering`, `nav`.
 
-## Still placeholder — needs Viky's input (search for `// TODO: confirm from resume`)
-- `site.name` — defaulted to "Vikas Palakurthi" (derived from email); confirm.
-- `experience[]` — currently one best-guess role. Replace with real work history/dates from the resume.
-- `public/resume.pdf` — not present yet; the Résumé button points to `/resume.pdf` (404 until added).
+## Still placeholder — needs Viky's input
+- `services.items[].screenshot` — unset; cards show styled "[ ATTACH SCREENSHOT ]" frames until app screenshots are dropped in `public/` and the paths set.
+- `public/resume.pdf` — not present yet (the hero no longer links it, but keep in mind for a future résumé button).
 
 ## Architecture notes
 - `src/app/page.tsx` assembles sections. `layout.tsx` = fonts + metadata.

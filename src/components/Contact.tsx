@@ -1,74 +1,66 @@
-import { site } from "@/data/content";
+import { contact } from "@/data/content";
 import Reveal from "./Reveal";
-import { GitHubIcon, XIcon, MailIcon, GlobeIcon, ArrowUpRight } from "./icons";
+import Topology from "./Topology";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-24 sm:px-8 sm:py-32">
-      <Reveal>
-        <div className="glow-border relative overflow-hidden rounded-2xl border border-base-700/60 bg-base-900/60 p-8 sm:p-14">
-          <div className="pointer-events-none absolute inset-0 grid-bg opacity-60" />
-          <div className="relative">
-            <div className="mono mb-3 flex items-center gap-2 text-xs text-accent">
-              <span>05</span>
-              <span className="h-px w-8 bg-accent/40" />
-              <span className="text-ink-faint">let&apos;s talk</span>
-            </div>
-            <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-              Building something at the edge of markets and software?
-            </h2>
-            <p className="mt-4 max-w-xl text-lg text-ink-muted">
-              I&apos;m open to select projects, collaborations, and conversations. The
-              fastest way to reach me is email.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={`mailto:${site.email}`}
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-base-950 transition-colors hover:bg-accent-dim"
-              >
-                <MailIcon className="h-4 w-4" />
-                {site.email}
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              <Chip href={site.socials.github} label="GitHub">
-                <GitHubIcon className="h-4 w-4" />
-              </Chip>
-              <Chip href={site.socials.x} label="@ROR_Traders">
-                <XIcon className="h-4 w-4" />
-              </Chip>
-              <Chip href={site.socials.website} label="rulesoverresults.com">
-                <GlobeIcon className="h-4 w-4" />
-              </Chip>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
-function Chip({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="mono inline-flex items-center gap-2 rounded-lg border border-base-700 bg-base-800/50 px-3.5 py-2 text-sm text-ink-muted transition-colors hover:border-accent/40 hover:text-accent"
+    <section
+      id="contact"
+      className="relative scroll-mt-20 overflow-hidden py-[110px]"
     >
-      {children}
-      {label}
-      <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
-    </a>
+      <div className="orb pointer-events-none absolute -bottom-80 left-1/2 h-[700px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(52,211,153,0.13),transparent_68%)]" />
+      <Topology variant="contact" />
+
+      <div className="relative mx-auto flex max-w-[900px] flex-col items-center gap-[26px] px-5 text-center sm:px-8">
+        <Reveal>
+          <div className="mono text-sm text-accent">{contact.command}</div>
+        </Reveal>
+        <Reveal delay={80}>
+          <h2 className="text-5xl font-bold leading-[1.05] tracking-tight text-ink-bright sm:text-[64px]">
+            {contact.heading.lead}{" "}
+            <span className="bg-gradient-to-r from-accent to-signal-info bg-clip-text text-transparent">
+              {contact.heading.gradient}
+            </span>
+          </h2>
+        </Reveal>
+        <Reveal delay={140}>
+          <p className="text-lg leading-relaxed text-ink-muted">{contact.sub}</p>
+        </Reveal>
+        <Reveal delay={200}>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            {contact.ctas.map((c) =>
+              c.primary ? (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  className="inline-flex items-center gap-2.5 rounded-[10px] bg-accent px-[30px] py-[17px] text-base font-bold text-[#06251a] shadow-[0_0_30px_-6px] shadow-accent transition-shadow hover:shadow-[0_0_44px_-4px] hover:shadow-accent"
+                >
+                  {c.label}
+                </a>
+              ) : (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-[10px] border border-base-700 px-[26px] py-4 text-[15px] font-medium text-ink transition-colors hover:border-accent/40 hover:text-accent"
+                >
+                  {c.label}
+                </a>
+              )
+            )}
+          </div>
+        </Reveal>
+        <Reveal delay={260}>
+          <div className="mono pt-2.5 text-[13px] text-ink-faint">{contact.responseLine}</div>
+        </Reveal>
+        <Reveal delay={320}>
+          <div className="flex flex-col items-center gap-1 pt-4">
+            <div className="sig -rotate-3 text-[46px] text-ink">{contact.signature.name}</div>
+            <div className="mono text-xs text-ink-faint">{contact.signature.caption}</div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
   );
 }
