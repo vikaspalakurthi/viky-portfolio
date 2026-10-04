@@ -1,6 +1,6 @@
 # ADR-0002: Tailwind CSS with design tokens
 
-**Status:** Accepted · **Date:** 2026-09-20
+**Status:** Accepted · **Date:** 2026-09-20 · Amended by [ADR-0008](0008-next16-react19-tailwind4.md) (Tailwind 4: tokens moved from `tailwind.config.ts` to the `@theme` block in `globals.css`; the token principle is unchanged)
 
 ## Context
 

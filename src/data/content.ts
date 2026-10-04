@@ -319,7 +319,7 @@ export const engineering = {
 
   stack: [
     {
-      name: "Next.js 14 (App Router)",
+      name: "Next.js 16 (App Router)",
       why: "Every page here is static — so the framework is used for what it's good at: file-based routing, build-time rendering, and zero-config code splitting. No server runtime to patch, scale, or wake up.",
     },
     {
@@ -327,8 +327,8 @@ export const engineering = {
       why: "The content layer is typed (Experience, Project, …), so a malformed entry fails the build instead of rendering broken UI. Types are the contract between content and components.",
     },
     {
-      name: "Tailwind CSS",
-      why: "Design tokens (colors, animation curves) live in one config file. Utilities keep styles co-located with markup, and the unused 95% of the framework is purged at build time.",
+      name: "Tailwind CSS 4",
+      why: "Design tokens (colors, animation curves) live in one @theme block in CSS — v4's config-less setup. Utilities keep styles co-located with markup, and only the classes actually used are generated at build time.",
     },
     {
       name: "Framer Motion + raw Canvas",

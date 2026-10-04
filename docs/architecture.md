@@ -1,6 +1,6 @@
 # Architecture
 
-Next.js 14 (App Router) · TypeScript · Tailwind CSS · Framer Motion. Fully static output; no server runtime.
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS 4 · Framer Motion. Fully static output; no server runtime.
 
 ## The one rule that shapes everything
 
@@ -48,7 +48,7 @@ The animated market-data backdrop is hand-rolled canvas + `requestAnimationFrame
 
 ## Styling system
 
-Design tokens are Tailwind theme extensions in [`tailwind.config.ts`](../tailwind.config.ts): the `base` dark scale, `ink` text scale, `accent` (#3ddc97), and `signal` (up/down/info) colors — change a token there and it changes everywhere. Global effects that can't be utilities (background grid, spotlight, scrollbar, reduced-motion overrides) live in `globals.css`. No CSS files per component; no inline hex values in components.
+Design tokens are Tailwind 4 CSS-first theme variables in the `@theme` block of [`src/app/globals.css`](../src/app/globals.css): the `base` dark scale, `ink` text scale, `accent` (#34d399), and `signal` (up/down/info/warn) colors — change a token there and it changes everywhere. Global effects that can't be utilities (background grid, spotlight, scrollbar, reduced-motion overrides) live in `globals.css`. No CSS files per component; no inline hex values in components.
 
 ## Accessibility stance
 
