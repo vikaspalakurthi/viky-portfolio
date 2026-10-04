@@ -23,11 +23,13 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="group flex items-center gap-2.5">
-          <span className="inline-block h-2.5 w-2.5 animate-pulse-dot rounded-full bg-accent shadow-[0_0_12px_var(--tw-shadow-color)] shadow-accent" />
-          <span className="mono text-sm font-medium tracking-tight text-ink">
-            {site.handle}
-            <span className="text-ink-faint">.dev</span>
+        <a href="/" className="group flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-accent/40 bg-gradient-to-br from-accent/20 to-signal-info/10 text-[13px] font-bold tracking-wider text-ink">
+            VP
+          </span>
+          <span className="mono text-sm font-semibold text-ink">
+            {site.terminalPrompt}{" "}
+            <span className="cursor-blink text-accent">▍</span>
           </span>
         </a>
 
@@ -36,17 +38,15 @@ export default function Nav() {
             <a
               key={n.href}
               href={n.href}
-              className="rounded-md px-3 py-2 text-sm text-ink-muted transition-colors hover:text-ink"
+              className="mono rounded-md px-3 py-2 text-[13px] text-ink-muted transition-colors hover:text-ink"
             >
               {n.label}
             </a>
           ))}
-          <a
-            href="/#contact"
-            className="ml-2 rounded-md border border-accent/40 bg-accent/10 px-3.5 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
-          >
-            Get in touch
-          </a>
+          <span className="mono ml-2 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3.5 py-2 text-[13px] font-semibold text-accent">
+            <span className="dot-live inline-block h-2 w-2 rounded-full bg-accent" />
+            {site.openToWorkPill}
+          </span>
         </nav>
 
         <button
@@ -82,11 +82,15 @@ export default function Nav() {
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2.5 text-sm text-ink-muted hover:text-ink"
+                className="mono rounded-md px-2 py-2.5 text-sm text-ink-muted hover:text-ink"
               >
                 {n.label}
               </a>
             ))}
+            <span className="mono mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3.5 py-2 text-xs font-semibold text-accent">
+              <span className="dot-live inline-block h-2 w-2 rounded-full bg-accent" />
+              {site.openToWorkPill}
+            </span>
           </nav>
         </div>
       )}

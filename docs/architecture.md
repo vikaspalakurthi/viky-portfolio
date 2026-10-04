@@ -56,4 +56,4 @@ Every animated component checks `prefers-reduced-motion` (via Framer Motion's `u
 
 ## Fonts
 
-Inter (sans) and JetBrains Mono (code/labels) are self-hosted via `@fontsource` and imported in `layout.tsx`. No Google Fonts request — the build runs offline and the live site makes zero third-party requests. ([ADR-0004](decisions/0004-self-hosted-fonts.md).)
+Space Grotesk (sans), JetBrains Mono (code/labels), and Mr Dafoe (the handwritten signature) are self-hosted via `@fontsource` and imported in `layout.tsx`. No Google Fonts request — the build runs offline and the live site makes zero third-party requests. (Decision: [ADR-0004](decisions/0004-self-hosted-fonts.md); the family swap from Inter came with the v2 ops-theme redesign — the self-hosting decision is unchanged.)

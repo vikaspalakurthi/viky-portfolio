@@ -1,17 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { site } from "@/data/content";
-import {
-  GitHubIcon,
-  XIcon,
-  MailIcon,
-  GlobeIcon,
-  DownloadIcon,
-  ArrowUpRight,
-} from "./icons";
 import Magnetic from "./Magnetic";
 import MarketCanvas from "./MarketCanvas";
+import Topology from "./Topology";
 
 const container: Variants = {
   hidden: {},
@@ -29,145 +22,123 @@ const item: Variants = {
 };
 
 export default function Hero() {
-  const reduced = useReducedMotion();
-  const words = site.name.split(" ");
-
   return (
-    <section
-      id="top"
-      className="relative flex min-h-[100svh] items-center overflow-hidden"
-    >
-      {/* animated market backdrop */}
-      <div className="absolute inset-0">
+    <section id="top" className="relative overflow-hidden pb-20 pt-32 sm:pt-40">
+      {/* layered backdrop: market streams + drifting orbs + node network */}
+      <div className="absolute inset-0 opacity-45">
         <MarketCanvas />
       </div>
+      <div className="orb pointer-events-none absolute -left-36 -top-44 h-[760px] w-[760px] rounded-full bg-[radial-gradient(circle,rgba(52,211,153,0.13),transparent_68%)]" />
+      <div className="orb orb-slow pointer-events-none absolute -right-56 top-32 h-[820px] w-[820px] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.09),transparent_68%)]" />
+      <Topology variant="hero" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-base-950" />
 
-      {/* cinematic overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-base-950/80 via-base-950/40 to-base-950" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,rgba(61,220,151,0.10),transparent)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-base-950 to-transparent" />
-
-      <div className="relative mx-auto w-full max-w-6xl px-5 pt-24 sm:px-8">
-        <motion.div variants={container} initial="hidden" animate="show">
-          <motion.div variants={item}>
-            <div className="mono mb-7 inline-flex items-center gap-2 rounded-full border border-base-700/80 bg-base-900/60 px-3 py-1.5 text-xs text-ink-muted backdrop-blur">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal-up opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-signal-up" />
-              </span>
-              Available for select projects
-            </div>
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-16 px-5 sm:px-8 lg:flex-row lg:gap-[72px]">
+        {/* left: copy */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="flex max-w-[620px] flex-col items-start gap-6"
+        >
+          <motion.div
+            variants={item}
+            className="mono inline-flex flex-wrap items-center gap-2.5 rounded-full border border-accent/30 bg-accent/5 px-4 py-2 text-xs tracking-[0.08em]"
+          >
+            <span className="dot-live h-2 w-2 rounded-full bg-accent" />
+            <span className="font-semibold text-accent">{site.statusBadge.main}</span>
+            <span className="text-ink-muted">{site.statusBadge.aside}</span>
           </motion.div>
 
-          <h1 className="flex flex-wrap gap-x-5 text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl lg:text-8xl">
-            {words.map((w, i) => (
-              <motion.span key={i} variants={item} className="inline-block">
-                {i === words.length - 1 ? (
-                  <span className="bg-gradient-to-br from-accent via-accent to-signal-info bg-clip-text text-transparent">
-                    {w}
-                  </span>
-                ) : (
-                  w
-                )}
-              </motion.span>
-            ))}
-          </h1>
-
-          <motion.p
+          <motion.div
             variants={item}
-            className="mono mt-5 text-base text-accent sm:text-xl"
+            className="mono text-sm tracking-[0.22em] text-ink-muted"
           >
-            {site.role}
-          </motion.p>
+            {site.eyebrow}
+          </motion.div>
+
+          <motion.h1
+            variants={item}
+            className="text-5xl font-bold leading-[1.02] tracking-tight text-ink-bright sm:text-6xl lg:text-[84px]"
+          >
+            {site.headline.lead}{" "}
+            <span className="bg-gradient-to-r from-accent to-signal-info bg-clip-text text-transparent">
+              {site.headline.gradient}
+            </span>
+          </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted sm:text-xl"
+            className="max-w-[560px] text-lg leading-relaxed text-ink-muted sm:text-xl"
           >
             {site.tagline}
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
+          <motion.div variants={item} className="flex flex-wrap items-center gap-4">
             <Magnetic>
               <a
-                href="#projects"
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-base-950 shadow-[0_0_30px_-6px] shadow-accent transition-shadow hover:shadow-[0_0_44px_-4px] hover:shadow-accent"
+                href={site.heroCtas.primary.href}
+                className="inline-flex items-center gap-2.5 rounded-[10px] bg-accent px-6 py-4 text-base font-bold text-[#06251a] shadow-[0_0_30px_-6px] shadow-accent transition-shadow hover:shadow-[0_0_44px_-4px] hover:shadow-accent"
               >
-                View my work
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                {site.heroCtas.primary.label}
               </a>
             </Magnetic>
             <Magnetic>
               <a
-                href={site.resumeUrl}
-                className="inline-flex items-center gap-2 rounded-lg border border-base-700 bg-base-900/50 px-6 py-3.5 text-sm font-medium text-ink backdrop-blur transition-colors hover:border-accent/40 hover:text-accent"
+                href={site.heroCtas.secondary.href}
+                className="mono inline-flex items-center gap-2.5 rounded-[10px] border border-base-700 px-6 py-[15px] text-sm text-ink transition-colors hover:border-accent/40 hover:text-accent"
               >
-                <DownloadIcon className="h-4 w-4" />
-                Résumé
+                {site.heroCtas.secondary.label}
               </a>
             </Magnetic>
-          </motion.div>
-
-          <motion.div variants={item} className="mt-10 flex items-center gap-2">
-            <SocialLink href={site.socials.github} label="GitHub">
-              <GitHubIcon />
-            </SocialLink>
-            <SocialLink href={site.socials.x} label="X">
-              <XIcon />
-            </SocialLink>
-            <SocialLink href={site.socials.website} label="Website">
-              <GlobeIcon />
-            </SocialLink>
-            <SocialLink href={`mailto:${site.email}`} label="Email">
-              <MailIcon />
-            </SocialLink>
           </motion.div>
         </motion.div>
-      </div>
 
-      {/* scroll cue */}
-      {!reduced && (
-        <motion.a
-          href="#about"
-          aria-label="Scroll down"
-          className="absolute bottom-7 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
+        {/* right: portrait card + identity terminal */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="relative flex w-full max-w-[440px] shrink-0 flex-col items-center pb-16 lg:w-[440px]"
         >
-          <div className="flex h-9 w-6 items-start justify-center rounded-full border border-base-600 p-1.5">
-            <motion.span
-              className="h-2 w-1 rounded-full bg-accent"
-              animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          <div className="glowcard relative h-[480px] w-full max-w-[400px] overflow-hidden rounded-[20px] border border-accent/35 bg-gradient-to-br from-base-900 to-base-800">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={site.portrait}
+              alt={site.name}
+              className="absolute inset-0 h-full w-full object-cover object-[50%_16%] brightness-95 contrast-[1.06] grayscale-[0.5]"
             />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/15 to-signal-info/10 mix-blend-color" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-b from-transparent to-base-950/90" />
+            <div className="mono absolute inset-x-0 bottom-[18px] text-center text-xs tracking-[0.16em] text-ink">
+              {site.portraitCaption.name} ·{" "}
+              <span className="text-accent">{site.portraitCaption.role}</span>
+            </div>
+            <div className="scansweep pointer-events-none absolute inset-x-0 h-[90px] bg-gradient-to-b from-transparent via-accent/15 to-transparent" />
+            <span className="absolute left-3.5 top-3.5 h-6 w-6 rounded-tl-lg border-l-2 border-t-2 border-accent" />
+            <span className="absolute right-3.5 top-3.5 h-6 w-6 rounded-tr-lg border-r-2 border-t-2 border-accent" />
+            <span className="absolute bottom-3.5 left-3.5 h-6 w-6 rounded-bl-lg border-b-2 border-l-2 border-accent" />
+            <span className="absolute bottom-3.5 right-3.5 h-6 w-6 rounded-br-lg border-b-2 border-r-2 border-accent" />
           </div>
-        </motion.a>
-      )}
-    </section>
-  );
-}
 
-function SocialLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Magnetic strength={0.5}>
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={label}
-        className="flex h-11 w-11 items-center justify-center rounded-lg border border-base-700 bg-base-900/50 text-ink-muted backdrop-blur transition-colors hover:border-accent/40 hover:text-accent"
-      >
-        {children}
-      </a>
-    </Magnetic>
+          <div className="floaty mono absolute bottom-0 left-0 w-[330px] max-w-full rounded-xl border border-base-700/80 bg-base-950/95 px-[18px] py-3.5 text-[12.5px] leading-8 shadow-[0_18px_44px_rgba(0,0,0,0.55)] sm:-left-3">
+            {site.identityCard.map((line) => (
+              <div key={line.text}>
+                {"prompt" in line && line.prompt ? (
+                  <span className="text-ink-faint">$ </span>
+                ) : (
+                  <span className="text-accent">✓ </span>
+                )}
+                <span className="text-ink-muted">{line.text}</span>
+              </div>
+            ))}
+            <div>
+              <span className="text-ink-faint">$ </span>
+              <span className="cursor-blink text-accent">▍</span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
