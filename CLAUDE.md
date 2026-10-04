@@ -5,7 +5,7 @@ Personal portfolio site for **Vikas Palakurthi (Viky)** — positioned as *SRE /
 **Truth rule:** every career claim (years, numbers, roles, tools) must come from the verified fact bank at `C:\Users\palak\Documents\Claude\Code\JobSearch\resume\master-resume.md` (+ skills-inventory.md) or from Viky directly. Never invent metrics.
 
 ## Stack
-- Next.js 14 (App Router) · TypeScript · Tailwind CSS
+- Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS 4
 - Framer Motion + CSS keyframes (globals.css) + one SMIL network (Topology.tsx) for interactions
 - Self-hosted fonts via `@fontsource` (Space Grotesk + JetBrains Mono + Mr Dafoe signature) — **no Google Fonts fetch** (keep it that way; the build runs offline)
 
@@ -43,10 +43,10 @@ Repo: https://github.com/vikaspalakurthi/viky-portfolio — public; the history 
 - `src/app/engineering/page.tsx` → `/engineering`: how the site is built/shipped (stack rationale, ADR summaries, release strategy, system design). Copy in `content.ts` → `engineering`; rendered by `src/components/Engineering.tsx`.
 - Client components (animations): `MarketCanvas` (hero canvas), `CursorGlow`, `ScrollProgress`, `Magnetic`, `TiltCard`, `CountUp`, `Reveal`, `Nav`.
 - `MarketCanvas.tsx` — the hero's animated market-data backdrop. Pure canvas + rAF; pauses off-screen via IntersectionObserver; draws one static frame under `prefers-reduced-motion`.
-- Theme tokens (colors, animations) in `tailwind.config.ts`; global effects (grid, spotlight, scrollbar, reduced-motion) in `src/app/globals.css`.
+- Theme tokens (colors, fonts, animations) live in the `@theme` block of `src/app/globals.css` (Tailwind 4 CSS-first config — there is no `tailwind.config.ts`); global effects (grid, spotlight, scrollbar, reduced-motion) in the same file.
 - **Accessibility:** all motion respects `prefers-reduced-motion`. Keep new motion behind that guard.
 
 ## Conventions
 - Keep components presentational; put data in `content.ts`.
-- Accent color is `accent` (#3ddc97) with `signal-info` (#4d9fff) as secondary. Change globally in `tailwind.config.ts`.
+- Accent color is `accent` (#34d399) with `signal-info` (#38bdf8) as secondary. Change globally in the `@theme` block of `src/app/globals.css`.
 - After content or component changes, run `npm run build` to confirm it still compiles before deploying.

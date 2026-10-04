@@ -18,7 +18,7 @@ export default function Contact() {
         <Reveal delay={80}>
           <h2 className="text-5xl font-bold leading-[1.05] tracking-tight text-ink-bright sm:text-[64px]">
             {contact.heading.lead}{" "}
-            <span className="bg-gradient-to-r from-accent to-signal-info bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-accent to-signal-info bg-clip-text text-transparent">
               {contact.heading.gradient}
             </span>
           </h2>

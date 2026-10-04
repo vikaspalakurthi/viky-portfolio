@@ -24,7 +24,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a href="/" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-accent/40 bg-gradient-to-br from-accent/20 to-signal-info/10 text-[13px] font-bold tracking-wider text-ink">
+          <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-accent/40 bg-linear-to-br from-accent/20 to-signal-info/10 text-[13px] font-bold tracking-wider text-ink">
             VP
           </span>
           <span className="mono text-sm font-semibold text-ink">

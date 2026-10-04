@@ -1,6 +1,6 @@
 # ADR-0001: Next.js 14 with the App Router
 
-**Status:** Accepted · **Date:** 2026-09-20
+**Status:** Accepted · **Date:** 2026-09-20 · Amended by [ADR-0008](0008-next16-react19-tailwind4.md) (platform now Next.js 16 / React 19; the pinning policy below is unchanged)
 
 ## Context
 

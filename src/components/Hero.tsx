@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="orb pointer-events-none absolute -left-36 -top-44 h-[760px] w-[760px] rounded-full bg-[radial-gradient(circle,rgba(52,211,153,0.13),transparent_68%)]" />
       <div className="orb orb-slow pointer-events-none absolute -right-56 top-32 h-[820px] w-[820px] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.09),transparent_68%)]" />
       <Topology variant="hero" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-base-950" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-b from-transparent to-base-950" />
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-16 px-5 sm:px-8 lg:flex-row lg:gap-[72px]">
         {/* left: copy */}
@@ -62,7 +62,7 @@ export default function Hero() {
             className="text-5xl font-bold leading-[1.02] tracking-tight text-ink-bright sm:text-6xl lg:text-[84px]"
           >
             {site.headline.lead}{" "}
-            <span className="bg-gradient-to-r from-accent to-signal-info bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-accent to-signal-info bg-clip-text text-transparent">
               {site.headline.gradient}
             </span>
           </motion.h1>
@@ -101,20 +101,20 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative flex w-full max-w-[440px] shrink-0 flex-col items-center pb-16 lg:w-[440px]"
         >
-          <div className="glowcard relative h-[480px] w-full max-w-[400px] overflow-hidden rounded-[20px] border border-accent/35 bg-gradient-to-br from-base-900 to-base-800">
+          <div className="glowcard relative h-[480px] w-full max-w-[400px] overflow-hidden rounded-[20px] border border-accent/35 bg-linear-to-br from-base-900 to-base-800">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={site.portrait}
               alt={site.name}
               className="absolute inset-0 h-full w-full object-cover object-[50%_16%] brightness-95 contrast-[1.06] grayscale-[0.5]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/15 to-signal-info/10 mix-blend-color" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-b from-transparent to-base-950/90" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-accent/15 to-signal-info/10 mix-blend-color" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[120px] bg-linear-to-b from-transparent to-base-950/90" />
             <div className="mono absolute inset-x-0 bottom-[18px] text-center text-xs tracking-[0.16em] text-ink">
               {site.portraitCaption.name} ·{" "}
               <span className="text-accent">{site.portraitCaption.role}</span>
             </div>
-            <div className="scansweep pointer-events-none absolute inset-x-0 h-[90px] bg-gradient-to-b from-transparent via-accent/15 to-transparent" />
+            <div className="scansweep pointer-events-none absolute inset-x-0 h-[90px] bg-linear-to-b from-transparent via-accent/15 to-transparent" />
             <span className="absolute left-3.5 top-3.5 h-6 w-6 rounded-tl-lg border-l-2 border-t-2 border-accent" />
             <span className="absolute right-3.5 top-3.5 h-6 w-6 rounded-tr-lg border-r-2 border-t-2 border-accent" />
             <span className="absolute bottom-3.5 left-3.5 h-6 w-6 rounded-bl-lg border-b-2 border-l-2 border-accent" />
