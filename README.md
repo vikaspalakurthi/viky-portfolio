@@ -4,6 +4,8 @@ A dark, cinematic personal portfolio built with **Next.js 14 (App Router)**, **T
 
 **Interactions:** an animated canvas market-data backdrop with mouse parallax, a cursor spotlight, a scroll-progress rail, 3D-tilt project cards with a follow spotlight, magnetic buttons, count-up stats, and staggered scroll reveals. All motion respects `prefers-reduced-motion` and pauses when off-screen for performance.
 
+**This repo is engineered in the open.** The site's `/engineering` page explains how it's built; the full write-ups live in [`docs/`](docs/): [architecture](docs/architecture.md), [system design](docs/system-design.md), [release branching strategy](docs/branching-strategy.md), and [decision records (ADRs)](docs/decisions/). The git history follows the branching strategy it documents — `main` is production, releases are tagged, run `git log --graph --decorate --oneline` to verify.
+
 ---
 
 ## ✏️ Where to edit content
@@ -72,10 +74,12 @@ src/
   app/
     layout.tsx      # fonts + metadata
     page.tsx        # assembles all sections
+    engineering/    # /engineering — how this site is built & shipped
     globals.css     # theme, grid, scrollbar
   components/        # one file per UI section
   data/
     content.ts      # ← EDIT EVERYTHING HERE
+docs/                # architecture, system design, branching strategy, ADRs
 public/
   resume.pdf         # ← add your résumé here
 ```
