@@ -4,16 +4,33 @@
 // ============================================================================
 
 export const site = {
-  // TODO: confirm full name from resume
   name: "Vikas Palakurthi",
-  handle: "Viky",
-  // One-line positioning: technical founder who architects AND ships.
-  role: "Technical Founder · Trading-Systems Engineer",
+  handle: "vikas",
+  role: "SRE / DevOps / Observability",
+  // Hero headline: first part plain, last word carries the gradient.
+  headline: { lead: "I keep production", gradient: "boring." },
   tagline:
-    "I build production trading tools end-to-end — from options-analytics engines and AI journaling agents to the data pipelines and UIs behind them.",
-  location: "United States", // TODO: confirm from resume
+    "Observability engineer for the platforms everyone else depends on — large-scale Elasticsearch logging, Kafka pipelines, Kubernetes fleets, and alerting that actually means something. When systems go quiet, I ship products of my own.",
+  eyebrow: "VIKAS PALAKURTHI · SRE / DEVOPS · AUSTIN, TX",
+  statusBadge: { main: "ALL SYSTEMS OPERATIONAL", aside: "— AVAILABLE FOR HIRE" },
+  terminalPrompt: "vikas@austin:~$",
+  openToWorkPill: "open_to_work=true",
+  location: "Austin, TX",
   email: "palakurthi.vikas@gmail.com",
   resumeUrl: "/resume.pdf", // drop your resume PDF in /public to enable the button
+  portrait: "/viky-portrait.jpg",
+  avatar: "/viky-avatar.jpg",
+  portraitCaption: { name: "VIKAS PALAKURTHI", role: "SRE / DEVOPS" },
+  // The floating terminal card next to the portrait.
+  identityCard: [
+    { prompt: true, text: "identity --verify" },
+    { check: true, text: "vikas.palakurthi — human, confirmed" },
+    { check: true, text: "region: austin-tx · open_to_work" },
+  ],
+  heroCtas: {
+    primary: { label: "View running services ↓", href: "#services" },
+    secondary: { label: "$ ping vikas", href: "#contact" },
+  },
   socials: {
     github: "https://github.com/vikaspalakurthi",
     x: "https://x.com/ROR_Traders",
@@ -23,194 +40,267 @@ export const site = {
   },
 };
 
-// Rotating "ticker" strip under the hero — quick credibility signals.
+// Scrolling keyword ticker under the hero.
 export const ticker: string[] = [
-  "Arvik Strategies LLC",
-  "ROR Traders — Rules Over Results",
-  "8 apps built · 2 in production",
-  "Python · FastAPI · Next.js · TypeScript",
-  "0DTE / short-dated options systems",
-  "AI agents + deterministic execution",
-  "1.6k+ posts shipped in ~4 months",
+  "ELASTICSEARCH",
+  "KAFKA",
+  "KUBERNETES",
+  "EKS",
+  "HELM",
+  "PROMETHEUS",
+  "GRAFANA",
+  "OPENTELEMETRY",
+  "TERRAFORM",
+  "ARGOCD",
+  "CLAUDE API",
+  "MCP",
+  "PAGERDUTY",
+  "PYTHON",
+  "GO",
+  "FASTAPI",
+  "REACT",
+  "NEXT.JS",
+];
+
+// Metric tiles under the ticker. Every number is a verified fact.
+export const metrics = [
+  { value: "10y", label: "running production infrastructure — AWS, Kubernetes, and everything observability", accent: true },
+  { value: "15 TB/day", label: "active Elasticsearch ingestion wrangled across stg/prod clusters", accent: false },
+  { value: "2,000+", label: "dashboards & alert rules migrated Datadog → Prometheus at Apple", accent: false },
+  { value: "0", label: "visible panic events during incidents (externally, anyway)", accent: true },
 ];
 
 export const about = {
-  // TODO: refine with resume detail. This is written from your product work.
+  command: "$ whoami",
+  heading: "Reliability engineer by trade. Founder by compulsion.",
   paragraphs: [
-    "I'm a founder-engineer who ships. I run Arvik Strategies LLC and build ROR Traders (“Rules Over Results”) — a trading-technology and content brand — which means I own the whole stack: data ingestion, analytics engines, backend APIs, React front-ends, and the deployment around them.",
-    "My focus is turning messy market data into fast, reliable decision tools. I've built premarket options-analytics engines, an AI-powered trading journal with behavioral coaching, backtesting infrastructure, and real-time scanners — designing each so the deterministic parts stay deterministic and the AI lives only at the edges where judgment helps.",
-    "I work in tight, iterative loops with a strong bias for shipping. Eight self-built applications later, the pattern that works for me is small, well-scoped contracts and fast feedback — building the thing, using it live in the market, and hardening what survives contact.",
+    "I build and run the platforms other engineers depend on: large-scale Elasticsearch logging clusters, Kafka streaming pipelines, Kubernetes fleets on EKS, and the alerting that ties it all together. Most recently I did exactly that at Apple, on contract through my own consultancy.",
+    "Off the clock I run ROR Traders, a trading-technology brand where I've designed, built, and shipped eight products solo — from a premarket options analytics engine to an AI-powered trading journal. Founding teaches you the things on-call can't: scope, shipping, and owning the entire stack.",
   ],
-  highlights: [
-    { value: "8+", label: "apps built end-to-end" },
-    { value: "2", label: "in production" },
-    { value: "1.6k+", label: "posts shipped" },
-    { value: "0DTE", label: "live trading systems" },
-  ],
+  callout: "Now looking for my next SRE / DevOps home — Austin or remote.",
+  offClock:
+    "Off the clock: in the charts before sunrise, working through Mark Douglas's The Disciplined Trader after dark.",
+  specSheet: {
+    title: "# spec sheet",
+    rows: [
+      { key: "role", value: '"SRE / DevOps / Observability"' },
+      { key: "base", value: '"Austin, TX"' },
+      { key: "mode", value: '["on-site", "hybrid", "remote"]' },
+      { key: "core_stack", value: '["Prometheus", "ELK", "Kafka", "K8s"]' },
+      { key: "side_quests", value: '"ships own products"' },
+      { key: "status", value: '"interviewing"', live: true },
+    ],
+  },
+  logCard: {
+    title: "prod — tail -f /var/log/career.log",
+    lines: [
+      { time: "[08:12:04]", level: "INFO", text: "cluster status: green" },
+      { time: "[08:12:07]", level: "INFO", text: "kafka lag: 0ms · groups healthy" },
+      { time: "[08:12:11]", level: "WARN", text: "coffee level below threshold" },
+      { time: "[08:12:12]", level: "INFO", text: "auto-remediation: refill ✓" },
+      { time: "[08:12:19]", level: "INFO", text: "deploy → canary 100% healthy" },
+      { time: "[08:12:23]", level: "INFO", text: "pagerduty: suspiciously quiet" },
+      { time: "[08:12:41]", level: "EVENT", text: "hiring_signal: recruiter_view" },
+      { time: "[08:12:42]", level: "INFO", text: "available=true · austin|remote" },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
-//  EXPERIENCE  (TODO: replace/confirm dates & titles from resume)
+//  CAREER LOG  — experience rendered as log entries. Facts from master resume.
 // ---------------------------------------------------------------------------
-export type Experience = {
-  role: string;
-  org: string;
+export type CareerEntry = {
+  level: "INFO" | "EVENT";
   period: string;
-  location?: string;
-  points: string[];
-  stack?: string[];
-};
-
-export const experience: Experience[] = [
-  {
-    role: "Founder & Lead Engineer",
-    org: "Arvik Strategies LLC / ROR Traders",
-    period: "2025 — Present", // TODO: confirm from resume
-    location: "Remote",
-    points: [
-      "Founded and run a trading-technology and content brand, owning product, engineering, and go-to-market.",
-      "Designed and shipped a suite of trading tools: premarket options analytics, an AI trading journal, backtesting infrastructure, and live market scanners.",
-      "Built and operate a paid community on Whop with recurring billing, tiered plans, and live premarket sessions.",
-      "Grew an audience to 1.6k+ posts across two accounts in ~4 months while shipping product in parallel.",
-    ],
-    stack: ["Python", "FastAPI", "Next.js", "TypeScript", "SQLite", "AI agents"],
-  },
-  // TODO: add prior roles from resume (company, title, dates, bullets)
-];
-
-// ---------------------------------------------------------------------------
-//  PROJECTS  — each card explains the tools / concepts / techniques used.
-// ---------------------------------------------------------------------------
-export type Project = {
-  name: string;
-  status: "Production" | "Active" | "Prototype" | "Research";
-  blurb: string;
+  org: string;
   role: string;
-  // "what I demonstrated" — the resume-relevant skills this project proves
-  demonstrates: string[];
-  stack: string[];
-  links?: { label: string; href: string }[];
-  featured?: boolean;
+  body: string;
 };
 
-export const projects: Project[] = [
-  {
-    name: "OiFetcher",
-    status: "Production",
-    featured: true,
-    blurb:
-      "Premarket options-analytics engine. Pulls and normalizes options-chain data, then computes open-interest walls, gamma/GEX context, and magnet strikes to surface where price is likely to gravitate before the open.",
-    role: "Architect & sole engineer",
-    demonstrates: [
-      "Data engineering: ingesting, cleaning, and normalizing large options-chain datasets",
-      "Quantitative modeling: gamma exposure / open-interest / magnet-strike calculations",
-      "Scheduled pipelines: reliable premarket jobs on a fixed cadence",
-      "API design: a clean backend serving a real-time analytics UI",
-    ],
-    stack: ["Python", "FastAPI", "SQLite", "APScheduler", "React", "echarts"],
-  },
-  {
-    name: "TradeNarrate",
-    status: "Active",
-    featured: true,
-    blurb:
-      "AI-powered trading journal with behavioral coaching. Logs trades, detects recurring behavioral patterns (overtrading, revenge trades), and narrates feedback so the trader improves the process, not just the P&L.",
-    role: "Architect & sole engineer",
-    demonstrates: [
-      "Applied LLMs: structured behavioral analysis and natural-language coaching",
-      "Product thinking: turning raw trade logs into actionable feedback",
-      "Full-stack delivery: data model, backend, and interactive front-end",
-    ],
-    stack: ["Python", "FastAPI", "LLMs", "Next.js", "TypeScript"],
-  },
-  {
-    name: "VAC Backtester",
-    status: "Active",
-    blurb:
-      "Backtesting engine that unifies signal logic across backtest and live contexts, so a strategy behaves identically whether it's being tested on history or run in real time.",
-    role: "Architect & sole engineer",
-    demonstrates: [
-      "Systems design: one signal engine, two execution contexts (no logic drift)",
-      "Testing rigor: reproducible strategy evaluation over historical data",
-      "Abstraction: shared contracts between simulation and live trading",
-    ],
-    stack: ["Python", "pandas", "SQLite"],
-  },
-  {
-    name: "In-Play Trend Scanner",
-    status: "Active",
-    blurb:
-      "Real-time scanner that surfaces dynamic tickers in play — filtering by open-interest walls and pivot levels to highlight names worth watching during the session.",
-    role: "Architect & sole engineer",
-    demonstrates: [
-      "Real-time streaming: consuming and filtering live market feeds",
-      "Signal design: encoding discretionary setups as deterministic filters",
-    ],
-    stack: ["Python", "Schwab streaming API", "FastAPI"],
-  },
-  {
-    name: "Open-Interest Tracker",
-    status: "Active",
-    blurb:
-      "Historical open-interest tracking application that snapshots and stores OI over time, enabling day-over-day comparison of where positioning is building.",
-    role: "Architect & sole engineer",
-    demonstrates: [
-      "Time-series storage and retrieval",
-      "Scheduled data capture and historical comparison",
-    ],
-    stack: ["Python", "SQLite", "APScheduler"],
-  },
-  {
-    name: "AI-Agent / Broker Safety Layer",
-    status: "Research",
-    blurb:
-      "Deterministic middleware that sits between AI agents and broker APIs — the LLM proposes, but a rules layer validates and executes, keeping order flow safe and auditable.",
-    role: "Designer",
-    demonstrates: [
-      "Safety architecture: deterministic guardrails around non-deterministic models",
-      "Systems thinking: clear separation between reasoning and execution",
-    ],
-    stack: ["Python", "Broker APIs", "LLM tool-use"],
-  },
-];
+export const careerLog: {
+  command: string;
+  heading: string;
+  entries: CareerEntry[];
+  truncated: string;
+} = {
+  command: "$ tail -f /var/log/career.log",
+  heading: "The log so far.",
+  entries: [
+    {
+      level: "INFO",
+      period: "2025.08 → 2026.09",
+      org: "Apple",
+      role: "— Observability Lead · contract via Arvik Strategies",
+      body: "Led a team of 10 migrating enterprise telemetry from Datadog to Apple's internal Prometheus platform (MOSAIC): 1,000+ dashboards and 1,000+ alert rules with zero disruption to production monitoring. Built an LLM-driven transformation pipeline on the Claude Code API and MCP that cut manual migration effort by 70–80%, and moved every observability asset into GitOps with CI/CD-deployed dashboards, alerts, and recording rules.",
+    },
+    {
+      level: "EVENT",
+      period: "2025 → now",
+      org: "Arvik Strategies / ROR Traders",
+      role: "— Founder",
+      body: "Designed, built, and shipped eight trading-technology products solo; operate a paid community with live premarket sessions. Full-stack, full-ownership, no one to page but myself.",
+    },
+    {
+      level: "INFO",
+      period: "2021.06 → 2025.08",
+      org: "Freddie Mac",
+      role: "— ELK / Observability Engineer (Lead)",
+      body: "Ran the enterprise logging and monitoring platform: migrated self-managed ELK on EKS to Elastic Cloud with zero data loss, built Prometheus federation and telemetry pipelines, defined SLIs/SLOs with error budgets, carried the on-call rotation with documented runbooks, and executed yearly cross-region DR failover exercises.",
+    },
+    {
+      level: "INFO",
+      period: "2019.06 → 2021.05",
+      org: "T-Mobile",
+      role: "— ELK DevOps Engineer / Kafka Admin",
+      body: "Administered Elasticsearch and Confluent Kafka clusters across all environments — RBAC and SSL/SASL hardening, partition rebalancing and broker operations, plus custom Prometheus exporters for consumer lag and replication health.",
+    },
+  ],
+  truncated:
+    "older entries truncated (Capital One, T-Mobile · 2016–2019) — request the full resume for complete history",
+};
 
 // ---------------------------------------------------------------------------
-//  SKILLS  — grouped by category for the skills grid.
+//  SERVICES  — self-built products rendered as running services.
 // ---------------------------------------------------------------------------
-export const skills: { group: string; items: string[] }[] = [
-  {
-    group: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "SQL"],
-  },
-  {
-    group: "Backend & Data",
-    items: ["FastAPI", "SQLite", "APScheduler", "pandas", "REST APIs", "Data pipelines"],
-  },
-  {
-    group: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "TradingView Advanced Charts", "echarts", "Tailwind CSS"],
-  },
-  {
-    group: "AI & Automation",
-    items: ["LLM integration", "AI agents", "Claude Code", "Tool-use / function calling", "Prompt engineering"],
-  },
-  {
-    group: "Markets & Infra",
-    items: ["Schwab streaming API", "Alpaca", "Robinhood API", "Firebase", "Cloudflare", "Vercel"],
-  },
-  {
-    group: "Domains",
-    items: ["Options analytics", "Backtesting", "Quantitative modeling", "Real-time systems"],
-  },
-];
+export type Service = {
+  name: string;
+  windowTitle: string;
+  blurb: string;
+  stack: string[];
+  screenshot?: string; // path under /public; placeholder frame rendered until set
+  barsSeed: number; // seed for the little activity bars
+};
+
+export const services: {
+  command: string;
+  heading: string;
+  sub: string;
+  items: Service[];
+} = {
+  command: "$ systemctl status side-projects --all",
+  heading: "Running services.",
+  sub: "Products I designed, built, and operate end to end — proof that I don't just keep systems alive, I build them from zero.",
+  items: [
+    {
+      name: "oifetcher",
+      windowTitle: "oifetcher — premarket view",
+      blurb:
+        "Premarket options analytics. Maps open-interest walls and key levels before the bell, so traders start the day with a plan instead of a guess.",
+      stack: ["Python", "FastAPI", "React"],
+      barsSeed: 1.7,
+    },
+    {
+      name: "tradenarrate",
+      windowTitle: "tradenarrate — journal view",
+      blurb:
+        "AI-powered trading journal with behavioral coaching. It reads your trades and tells you the truth about your habits — before they get expensive.",
+      stack: ["Next.js", "TypeScript", "AI coaching"],
+      barsSeed: 2.3,
+    },
+    {
+      name: "ror-traders",
+      windowTitle: "ror-traders — community",
+      blurb:
+        "The brand that ships it all: a paid trading community with live premarket sessions, powered by a suite of eight self-built tools.",
+      stack: ["Product", "Community", "Content"],
+      barsSeed: 3.1,
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+//  SKILLS  — instrumented skill cards with sparklines and a status line.
+// ---------------------------------------------------------------------------
+export type SkillGroup = {
+  group: string;
+  items: string[];
+  state: string;
+  spark: string; // polyline points for the 90x28 sparkline
+  sparkColor: "accent" | "info";
+};
+
+export const skills: { command: string; heading: string; groups: SkillGroup[] } = {
+  command: "$ top -o expertise",
+  heading: "Instrumented skills.",
+  groups: [
+    {
+      group: "OBSERVABILITY & LOGGING",
+      items: ["Elasticsearch", "ELK Stack", "Kibana", "Prometheus", "Grafana", "OpenTelemetry", "Datadog"],
+      state: "battle-tested",
+      spark: "0,22 12,18 24,20 36,10 48,14 60,6 74,9 90,3",
+      sparkColor: "accent",
+    },
+    {
+      group: "STREAMING & EVENTS",
+      items: ["Kafka (Confluent)", "RabbitMQ", "AWS EventBridge", "Streaming pipelines"],
+      state: "zero lag",
+      spark: "0,16 14,20 28,8 42,12 56,5 70,11 90,4",
+      sparkColor: "info",
+    },
+    {
+      group: "PLATFORM & ORCHESTRATION",
+      items: ["Kubernetes", "EKS", "Helm", "Docker", "Terraform", "ArgoCD", "AWS"],
+      state: "self-healing",
+      spark: "0,24 16,16 30,19 44,9 58,13 72,5 90,8",
+      sparkColor: "accent",
+    },
+    {
+      group: "AI & LLM AUTOMATION",
+      items: ["Claude API", "Claude Code", "MCP", "Prompt engineering", "LLM validation pipelines"],
+      state: "context-aware",
+      spark: "0,18 15,22 30,10 45,14 60,6 75,10 90,2",
+      sparkColor: "info",
+    },
+    {
+      group: "INCIDENT & ON-CALL",
+      items: ["PagerDuty", "Opsgenie", "ServiceNow", "Runbooks", "SLIs/SLOs", "Postmortems"],
+      state: "calm under fire",
+      spark: "0,10 14,14 28,6 42,18 56,8 70,15 90,6",
+      sparkColor: "info",
+    },
+    {
+      group: "BUILD & AUTOMATE",
+      items: ["Python", "Go", "Bash", "Jenkins", "GitHub Actions", "FastAPI", "TypeScript", "React", "Next.js"],
+      state: "always compiling",
+      spark: "0,20 15,12 30,16 45,7 60,12 75,4 90,7",
+      sparkColor: "accent",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+//  CONTACT
+// ---------------------------------------------------------------------------
+export const contact = {
+  command: "$ ssh vikas@your-infrastructure",
+  heading: { lead: "Let's keep something running", gradient: "together." },
+  sub: "Austin, TX · on-site, hybrid, or remote · SRE / DevOps / Observability",
+  ctas: [
+    { label: "Open a connection →", href: "mailto:palakurthi.vikas@gmail.com", primary: true },
+    { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/vikas-palakurthi-337b76130", primary: false },
+    { label: "GitHub ↗", href: "https://github.com/vikaspalakurthi", primary: false },
+  ],
+  responseLine: "avg response time: < 24h · enthusiasm uptime: 100%",
+  signature: { name: "Vikas", caption: "— written, designed & kept online by an actual human" },
+};
+
+export const footer = {
+  copyright: "© 2026 Vikas Palakurthi — built dark, runs quiet",
+  status: "all systems operational",
+};
+
+export const miniVikas = {
+  serverLabel: "PROD — HANDLE WITH CARE",
+  caption: "mini-vikas · on patrol · keeping prod green",
+};
 
 export const nav = [
-  { label: "About", href: "/#about" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Engineering", href: "/engineering" },
-  { label: "Contact", href: "/#contact" },
+  { label: "about", href: "/#about" },
+  { label: "skills", href: "/#skills" },
+  { label: "services", href: "/#services" },
+  { label: "logs", href: "/#logs" },
+  { label: "engineering", href: "/engineering" },
+  { label: "contact", href: "/#contact" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -246,7 +336,7 @@ export const engineering = {
     },
     {
       name: "Self-hosted fonts",
-      why: "Inter and JetBrains Mono ship from the same origin via @fontsource. No Google Fonts request: no third-party dependency at build or runtime, no layout-shifting late font swap.",
+      why: "Space Grotesk, JetBrains Mono, and the signature script ship from the same origin via @fontsource. No Google Fonts request: no third-party dependency at build or runtime, no layout-shifting late font swap.",
     },
     {
       name: "Vercel",
