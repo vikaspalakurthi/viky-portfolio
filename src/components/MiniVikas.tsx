@@ -36,7 +36,7 @@ export default function MiniVikas() {
 
       {/* PROD sign */}
       <div className="absolute bottom-[21px] left-[72%] flex flex-col items-center">
-        <div className="mono rounded border border-base-600/80 bg-base-900 px-[9px] py-1 text-[9px] tracking-[0.08em] text-ink-muted">
+        <div className="mono rounded-sm border border-base-600/80 bg-base-900 px-[9px] py-1 text-[9px] tracking-[0.08em] text-ink-muted">
           {miniVikas.serverLabel}
         </div>
         <div className="h-3.5 w-0.5 bg-base-600/80" />

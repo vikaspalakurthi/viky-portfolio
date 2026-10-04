@@ -1,6 +1,6 @@
 # Personal Portfolio — Vikas Palakurthi
 
-A dark, cinematic personal portfolio built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Self-hosted fonts (no external calls), fully static, deploys anywhere.
+A dark, cinematic personal portfolio built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS 4**, and **Framer Motion**. Self-hosted fonts (no external calls), fully static, deploys anywhere.
 
 **Interactions:** an animated canvas market-data backdrop with mouse parallax, a cursor spotlight, a scroll-progress rail, 3D-tilt project cards with a follow spotlight, magnetic buttons, count-up stats, and staggered scroll reveals. All motion respects `prefers-reduced-motion` and pauses when off-screen for performance.
 
@@ -61,7 +61,7 @@ npm run start
 
 ## 🎨 Customizing the look
 
-- **Accent color / theme:** [`tailwind.config.ts`](tailwind.config.ts) — the `accent`, `base`, and `ink` color scales.
+- **Accent color / theme:** the `@theme` block in [`src/app/globals.css`](src/app/globals.css) — the `accent`, `base`, and `ink` color scales (Tailwind 4 CSS-first tokens).
 - **Global styles / background grid / scrollbar:** [`src/app/globals.css`](src/app/globals.css).
 - **Sections / layout:** [`src/components/`](src/components/) — one file per section (`Hero`, `About`, `Experience`, `Projects`, `Skills`, `Contact`).
 
