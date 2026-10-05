@@ -93,7 +93,7 @@ export default async function OpenGraphImage() {
         >
           <div style={{ display: "flex", color: "#34d399" }}>vikas.rulesoverresults.com</div>
           <div style={{ display: "flex", color: "#5b6b7d", fontSize: 20 }}>
-            elasticsearch · kafka · kubernetes · prometheus
+            aws · elasticsearch · kafka · kubernetes · prometheus
           </div>
         </div>
       </div>
