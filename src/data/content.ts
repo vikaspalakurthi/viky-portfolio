@@ -356,6 +356,7 @@ export const nav = [
   { label: "services", href: "/#services" },
   { label: "logs", href: "/#logs" },
   { label: "engineering", href: "/engineering" },
+  { label: "blog", href: "/blog" },
   { label: "contact", href: "/#contact" },
 ];
 

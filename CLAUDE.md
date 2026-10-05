@@ -32,15 +32,15 @@ Repo: https://github.com/vikaspalakurthi/viky-portfolio — public; the history 
 `interview-prep/` is **gitignored** — Viky's private interview preparation notes about this project. Never commit it, never reference it from site content.
 
 ## Where content lives — THIS IS THE KEY FILE
-**`src/data/content.ts`** holds ALL copy. Components read only from it; never hardcode content in components. Sections: `site`, `ticker`, `metrics`, `about`, `skills`, `services`, `careerLog`, `contact`, `footer`, `miniVikas`, `engineering`, `nav`.
+**`src/data/content.ts`** holds ALL copy. Components read only from it; never hardcode content in components. Sections: `site`, `ticker`, `metrics`, `about`, `skills`, `services`, `careerLog`, `contact`, `footer`, `miniVikas`, `engineering`, `nav`. Blog posts live in **`src/data/blog/`** as typed block modules (see Architecture notes).
 
 ## Still placeholder — needs Viky's input
-- `services.items[].screenshot` — unset; cards show styled "[ ATTACH SCREENSHOT ]" frames until app screenshots are dropped in `public/` and the paths set.
 - `public/resume.pdf` — not present yet (the hero no longer links it, but keep in mind for a future résumé button).
 
 ## Architecture notes
 - `src/app/page.tsx` assembles sections. `layout.tsx` = fonts + metadata.
 - `src/app/engineering/page.tsx` → `/engineering`: how the site is built/shipped (stack rationale, ADR summaries, release strategy, system design). Copy in `content.ts` → `engineering`; rendered by `src/components/Engineering.tsx`.
+- **Blog (deep dives):** `src/app/blog/` → `/blog` index + `/blog/[slug]` (SSG via `generateStaticParams`). Each post is a typed TS module in `src/data/blog/` (registry in `index.ts`; blocks: prose/flow/sequence/incidents/lessons/cheatsheet) rendered by `src/components/blog/PostBody.tsx`. Diagrams are data → in-house renderers (`FlowDiagram` CSS, `SequenceDiagram` SVG) — no Mermaid, no client JS. Career-log cards and skill chips auto-link to a post via `postForOrg`/`postForSkill`; links only render when a published post exists. Depth contract: 6–10 min read, every claim interview-defensible, facts from the fact bank only.
 - Client components (animations): `MarketCanvas` (hero canvas), `CursorGlow`, `ScrollProgress`, `Magnetic`, `TiltCard`, `CountUp`, `Reveal`, `Nav`.
 - `MarketCanvas.tsx` — the hero's animated market-data backdrop. Pure canvas + rAF; pauses off-screen via IntersectionObserver; draws one static frame under `prefers-reduced-motion`.
 - Theme tokens (colors, fonts, animations) live in the `@theme` block of `src/app/globals.css` (Tailwind 4 CSS-first config — there is no `tailwind.config.ts`); global effects (grid, spotlight, scrollbar, reduced-motion) in the same file.
