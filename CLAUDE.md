@@ -36,7 +36,7 @@ Repo: https://github.com/vikaspalakurthi/viky-portfolio — public; the history 
 
 ## Still placeholder — needs Viky's input
 - `services.items[].screenshot` — unset; cards show styled "[ ATTACH SCREENSHOT ]" frames until app screenshots are dropped in `public/` and the paths set.
-- `public/resume.pdf` — not present yet (the hero no longer links it, but keep in mind for a future résumé button).
+- `public/resume.pdf` — present (SRE/DevOps 2-page variant); linked from the nav ("resume ↓") and the contact CTAs. Replace the file to update the resume; no code change needed.
 
 ## Architecture notes
 - `src/app/page.tsx` assembles sections. `layout.tsx` = fonts + metadata.

@@ -38,6 +38,7 @@ export default function Nav() {
             <a
               key={n.href}
               href={n.href}
+              {...(n.href.endsWith(".pdf") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="mono rounded-md px-3 py-2 text-[13px] text-ink-muted transition-colors hover:text-ink"
             >
               {n.label}
@@ -81,6 +82,7 @@ export default function Nav() {
               <a
                 key={n.href}
                 href={n.href}
+                {...(n.href.endsWith(".pdf") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 onClick={() => setOpen(false)}
                 className="mono rounded-md px-2 py-2.5 text-sm text-ink-muted hover:text-ink"
               >

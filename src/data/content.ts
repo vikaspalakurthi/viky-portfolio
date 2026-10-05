@@ -333,6 +333,7 @@ export const contact = {
   sub: "Austin, TX · on-site, hybrid, or remote · Senior SRE / DevOps / Observability",
   ctas: [
     { label: "Open a connection →", href: "mailto:palakurthi.vikas@gmail.com", primary: true },
+    { label: "Résumé (PDF) ↓", href: "/resume.pdf", primary: false },
     { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/vikas-palakurthi-337b76130", primary: false },
     { label: "GitHub ↗", href: "https://github.com/vikaspalakurthi", primary: false },
   ],
@@ -356,6 +357,7 @@ export const nav = [
   { label: "services", href: "/#services" },
   { label: "logs", href: "/#logs" },
   { label: "engineering", href: "/engineering" },
+  { label: "resume ↓", href: "/resume.pdf" },
   { label: "contact", href: "/#contact" },
 ];
 
