@@ -35,7 +35,8 @@ export default function Projects() {
           </p>
         </div>
       </Reveal>
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* Two flagship services — two wide columns, no orphan third slot. */}
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {services.items.map((s, i) => (
           <Reveal key={s.name} delay={i * 80}>
             <TiltCard className="card-spot relative flex h-full flex-col gap-4 rounded-2xl border border-base-700/60 bg-base-900/75 p-6">

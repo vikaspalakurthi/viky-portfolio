@@ -177,6 +177,7 @@ export const services: {
       blurb:
         "Premarket options analytics with paying subscribers. Maps open-interest walls and key levels before the bell — and I own everything behind it: infrastructure, deploys, billing, support, and incidents.",
       stack: ["TypeScript", "React", "Python"],
+      screenshot: "/oifetcher-preview.webp",
       barsSeed: 1.7,
     },
     {
@@ -185,6 +186,7 @@ export const services: {
       blurb:
         "AI-powered trading journal with behavioral coaching, built on the Claude API — the same LLM stack I used to automate enterprise migration at Apple, pointed at a consumer product.",
       stack: ["Next.js", "TypeScript", "Claude API"],
+      screenshot: "/tradenarrate-preview.webp",
       barsSeed: 2.3,
     },
   ],
@@ -251,7 +253,7 @@ export const skills: { command: string; heading: string; groups: SkillGroup[] } 
     },
     {
       group: "AI & LLM AUTOMATION",
-      items: ["Claude API", "Claude Code", "MCP", "Prompt engineering", "LLM validation pipelines"],
+      items: ["Claude API", "Claude Code", "MCP", "Agentic loops & subagents", "Claude Skills", "Prompt engineering", "LLM validation pipelines"],
       state: "context-aware",
       spark: "0,18 15,22 30,10 45,14 60,6 75,10 90,2",
       sparkColor: "accent",
