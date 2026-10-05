@@ -194,6 +194,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
+  /* absolutely-positioned overlay paints above in-flow children —
+     must never intercept clicks on links inside the card */
+  pointer-events: none;
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(135deg, rgba(52, 211, 153, 0.5), rgba(56, 189, 248, 0.15), transparent 60%);
