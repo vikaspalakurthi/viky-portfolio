@@ -1,6 +1,6 @@
 # CLAUDE.md — project context for Claude Code
 
-Personal portfolio site for **Vikas Palakurthi (Viky)** — positioned as *SRE / DevOps / Observability engineer, Austin TX, open to work* (since v2; founder/trading story kept as the "running services" side-project section). Dark terminal/ops aesthetic from his design artifact. Built to link from his resume.
+Personal portfolio site for **Vikas Palakurthi (Viky)** — positioned as *Senior SRE / DevOps / Observability engineer, Austin TX, open to work* (since v3.1 the site is job-application-focused: the ROR Traders brand / paid-community framing is gone; oifetcher and tradenarrate remain as "running services" side-project proof of end-to-end ownership). Dark terminal/ops aesthetic from his design artifact. Built to link from his resume.
 
 **Truth rule:** every career claim (years, numbers, roles, tools) must come from the verified fact bank at `C:\Users\palak\Documents\Claude\Code\JobSearch\resume\master-resume.md` (+ skills-inventory.md) or from Viky directly. Never invent metrics.
 

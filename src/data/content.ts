@@ -6,12 +6,12 @@
 export const site = {
   name: "Vikas Palakurthi",
   handle: "vikas",
-  role: "SRE / DevOps / Observability",
+  role: "Senior SRE / DevOps / Observability",
   // Hero headline: first part plain, last word carries the gradient.
   headline: { lead: "I keep production", gradient: "boring." },
   tagline:
-    "Observability engineer for the platforms everyone else depends on — large-scale Elasticsearch logging, Kafka pipelines, Kubernetes fleets, and alerting that actually means something. When systems go quiet, I ship products of my own.",
-  eyebrow: "VIKAS PALAKURTHI · SRE / DEVOPS · AUSTIN, TX",
+    "Senior SRE / DevOps / Observability engineer for the platforms everyone else depends on — large-scale Elasticsearch logging, Kafka pipelines, Kubernetes fleets, and alerting that actually means something. When systems go quiet, I ship products of my own.",
+  eyebrow: "VIKAS PALAKURTHI · SENIOR SRE / DEVOPS / OBSERVABILITY · AUSTIN, TX",
   statusBadge: { main: "ALL SYSTEMS OPERATIONAL", aside: "— AVAILABLE FOR HIRE" },
   terminalPrompt: "vikas@austin:~$",
   openToWorkPill: "open_to_work=true",
@@ -20,7 +20,7 @@ export const site = {
   resumeUrl: "/resume.pdf", // drop your resume PDF in /public to enable the button
   portrait: "/viky-portrait.jpg",
   avatar: "/viky-avatar.jpg",
-  portraitCaption: { name: "VIKAS PALAKURTHI", role: "SRE / DEVOPS" },
+  portraitCaption: { name: "VIKAS PALAKURTHI", role: "SENIOR SRE / DEVOPS" },
   // The floating terminal card next to the portrait.
   identityCard: [
     { prompt: true, text: "identity --verify" },
@@ -33,9 +33,6 @@ export const site = {
   },
   socials: {
     github: "https://github.com/vikaspalakurthi",
-    x: "https://x.com/ROR_Traders",
-    xAlt: "https://x.com/tradingsinner",
-    website: "https://rulesoverresults.com",
     linkedin: "https://www.linkedin.com/in/vikas-palakurthi-337b76130",
   },
 };
@@ -72,18 +69,18 @@ export const metrics = [
 
 export const about = {
   command: "$ whoami",
-  heading: "Reliability engineer by trade. Founder by compulsion.",
+  heading: "Reliability engineer by trade. Builder by habit.",
   paragraphs: [
-    "I build and run the platforms other engineers depend on: large-scale Elasticsearch logging clusters, Kafka streaming pipelines, Kubernetes fleets on EKS, and the alerting that ties it all together. Most recently I did exactly that at Apple, on contract through my own consultancy.",
-    "Off the clock I run ROR Traders, a trading-technology brand where I've designed, built, and shipped eight products solo — from a premarket options analytics engine to an AI-powered trading journal. Founding teaches you the things on-call can't: scope, shipping, and owning the entire stack.",
+    "I build and run the platforms other engineers depend on: large-scale Elasticsearch logging clusters, Kafka streaming pipelines, Kubernetes fleets on EKS, and the alerting that ties it all together. Most recently I did exactly that at Apple, leading a team of 10 through an enterprise telemetry migration.",
+    "On the side I design, build, and operate my own products end to end — a premarket options analytics engine and an AI-powered trading journal among them. Shipping solo teaches the things on-call can't: scope, product sense, and owning every layer of the stack.",
   ],
-  callout: "Now looking for my next SRE / DevOps home — Austin or remote.",
+  callout: "Now looking for my next SRE / DevOps / Observability home — Austin or remote.",
   offClock:
-    "Off the clock: in the charts before sunrise, working through Mark Douglas's The Disciplined Trader after dark.",
+    "Off the clock: shipping my own side projects end to end — and reading other people's postmortems so I don't star in my own.",
   specSheet: {
     title: "# spec sheet",
     rows: [
-      { key: "role", value: '"SRE / DevOps / Observability"' },
+      { key: "role", value: '"Senior SRE / DevOps / Observability"' },
       { key: "base", value: '"Austin, TX"' },
       { key: "mode", value: '["on-site", "hybrid", "remote"]' },
       { key: "core_stack", value: '["Prometheus", "ELK", "Kafka", "K8s"]' },
@@ -134,13 +131,6 @@ export const careerLog: {
       body: "Led a team of 10 migrating enterprise telemetry from Datadog to Apple's internal Prometheus platform (MOSAIC): 1,000+ dashboards and 1,000+ alert rules with zero disruption to production monitoring. Built an LLM-driven transformation pipeline on the Claude Code API and MCP that cut manual migration effort by 70–80%, and moved every observability asset into GitOps with CI/CD-deployed dashboards, alerts, and recording rules.",
     },
     {
-      level: "EVENT",
-      period: "2025 → now",
-      org: "Arvik Strategies / ROR Traders",
-      role: "— Founder",
-      body: "Designed, built, and shipped eight trading-technology products solo; operate a paid community with live premarket sessions. Full-stack, full-ownership, no one to page but myself.",
-    },
-    {
       level: "INFO",
       period: "2021.06 → 2025.08",
       org: "Freddie Mac",
@@ -179,31 +169,23 @@ export const services: {
 } = {
   command: "$ systemctl status side-projects --all",
   heading: "Running services.",
-  sub: "Products I designed, built, and operate end to end — proof that I don't just keep systems alive, I build them from zero.",
+  sub: "Products I designed, built, and operate end to end — real users, real on-call, and no one to page but myself.",
   items: [
     {
       name: "oifetcher",
       windowTitle: "oifetcher — premarket view",
       blurb:
-        "Premarket options analytics. Maps open-interest walls and key levels before the bell, so traders start the day with a plan instead of a guess.",
-      stack: ["Python", "FastAPI", "React"],
+        "Premarket options analytics with paying subscribers. Maps open-interest walls and key levels before the bell — and I own everything behind it: infrastructure, deploys, billing, support, and incidents.",
+      stack: ["TypeScript", "React", "Python"],
       barsSeed: 1.7,
     },
     {
       name: "tradenarrate",
       windowTitle: "tradenarrate — journal view",
       blurb:
-        "AI-powered trading journal with behavioral coaching. It reads your trades and tells you the truth about your habits — before they get expensive.",
-      stack: ["Next.js", "TypeScript", "AI coaching"],
+        "AI-powered trading journal with behavioral coaching, built on the Claude API — the same LLM stack I used to automate enterprise migration at Apple, pointed at a consumer product.",
+      stack: ["Next.js", "TypeScript", "Claude API"],
       barsSeed: 2.3,
-    },
-    {
-      name: "ror-traders",
-      windowTitle: "ror-traders — community",
-      blurb:
-        "The brand that ships it all: a paid trading community with live premarket sessions, powered by a suite of eight self-built tools.",
-      stack: ["Product", "Community", "Content"],
-      barsSeed: 3.1,
     },
   ],
 };
@@ -222,10 +204,26 @@ export type SkillGroup = {
 export const skills: { command: string; heading: string; groups: SkillGroup[] } = {
   command: "$ top -o expertise",
   heading: "Instrumented skills.",
+  // Ordered to walk the title: DevOps (platform → delivery) → Observability
+  // (telemetry → streaming) → SRE (reliability → security) → force multipliers.
   groups: [
     {
+      group: "CLOUD & PLATFORM",
+      items: ["AWS", "Kubernetes", "EKS", "Docker", "Helm", "Istio/Envoy"],
+      state: "self-healing",
+      spark: "0,24 16,16 30,19 44,9 58,13 72,5 90,8",
+      sparkColor: "accent",
+    },
+    {
+      group: "IAC, CI/CD & GITOPS",
+      items: ["Terraform", "CloudFormation/CDK", "Ansible", "Jenkins", "GitHub Actions", "ArgoCD"],
+      state: "zero drift",
+      spark: "0,20 15,12 30,16 45,7 60,12 75,4 90,7",
+      sparkColor: "info",
+    },
+    {
       group: "OBSERVABILITY & LOGGING",
-      items: ["Elasticsearch", "ELK Stack", "Kibana", "Prometheus", "Grafana", "OpenTelemetry", "Datadog"],
+      items: ["Prometheus", "Grafana (LGTM)", "Elasticsearch / ELK", "OpenTelemetry", "Datadog", "Elastic APM"],
       state: "battle-tested",
       spark: "0,22 12,18 24,20 36,10 48,14 60,6 74,9 90,3",
       sparkColor: "accent",
@@ -238,32 +236,32 @@ export const skills: { command: string; heading: string; groups: SkillGroup[] } 
       sparkColor: "info",
     },
     {
-      group: "PLATFORM & ORCHESTRATION",
-      items: ["Kubernetes", "EKS", "Helm", "Docker", "Terraform", "ArgoCD", "AWS"],
-      state: "self-healing",
-      spark: "0,24 16,16 30,19 44,9 58,13 72,5 90,8",
+      group: "RELIABILITY & INCIDENT RESPONSE",
+      items: ["SLIs/SLOs", "Error budgets", "PagerDuty", "Opsgenie", "Runbooks", "Postmortems", "DR failovers"],
+      state: "calm under fire",
+      spark: "0,10 14,14 28,6 42,18 56,8 70,15 90,6",
       sparkColor: "accent",
+    },
+    {
+      group: "SECURITY & ACCESS",
+      items: ["Vault", "IAM", "KMS", "SAML SSO", "SSL/TLS", "Kafka RBAC"],
+      state: "least privilege",
+      spark: "0,14 15,18 30,9 45,15 60,7 75,12 90,5",
+      sparkColor: "info",
     },
     {
       group: "AI & LLM AUTOMATION",
       items: ["Claude API", "Claude Code", "MCP", "Prompt engineering", "LLM validation pipelines"],
       state: "context-aware",
       spark: "0,18 15,22 30,10 45,14 60,6 75,10 90,2",
-      sparkColor: "info",
-    },
-    {
-      group: "INCIDENT & ON-CALL",
-      items: ["PagerDuty", "Opsgenie", "ServiceNow", "Runbooks", "SLIs/SLOs", "Postmortems"],
-      state: "calm under fire",
-      spark: "0,10 14,14 28,6 42,18 56,8 70,15 90,6",
-      sparkColor: "info",
-    },
-    {
-      group: "BUILD & AUTOMATE",
-      items: ["Python", "Go", "Bash", "Jenkins", "GitHub Actions", "FastAPI", "TypeScript", "React", "Next.js"],
-      state: "always compiling",
-      spark: "0,20 15,12 30,16 45,7 60,12 75,4 90,7",
       sparkColor: "accent",
+    },
+    {
+      group: "LANGUAGES & FRAMEWORKS",
+      items: ["Python", "Go", "Bash", "TypeScript", "React", "Next.js", "FastAPI"],
+      state: "always compiling",
+      spark: "0,21 14,13 28,17 42,8 56,11 70,5 90,9",
+      sparkColor: "info",
     },
   ],
 };
@@ -274,7 +272,7 @@ export const skills: { command: string; heading: string; groups: SkillGroup[] } 
 export const contact = {
   command: "$ ssh vikas@your-infrastructure",
   heading: { lead: "Let's keep something running", gradient: "together." },
-  sub: "Austin, TX · on-site, hybrid, or remote · SRE / DevOps / Observability",
+  sub: "Austin, TX · on-site, hybrid, or remote · Senior SRE / DevOps / Observability",
   ctas: [
     { label: "Open a connection →", href: "mailto:palakurthi.vikas@gmail.com", primary: true },
     { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/vikas-palakurthi-337b76130", primary: false },
