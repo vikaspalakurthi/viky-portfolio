@@ -36,7 +36,7 @@ export default function Experience() {
                       {e.level}
                     </span>
                     <span className="text-xl font-bold text-ink-bright">{e.org}</span>
-                    <span className="text-[15px] text-ink-muted">{e.role}</span>
+                    {e.role && <span className="text-[15px] text-ink-muted">{e.role}</span>}
                   </div>
                   <div className="text-[15px] leading-[1.65] text-ink-muted">{e.body}</div>
                 </div>

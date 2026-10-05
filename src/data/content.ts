@@ -110,7 +110,9 @@ export type CareerEntry = {
   level: "INFO" | "EVENT";
   period: string;
   org: string;
-  role: string;
+  // Deliberately no displayed job title: the work description travels across
+  // Platform/SRE/SWE applications; exact titles live in the resume.
+  role?: string;
   body: string;
 };
 
@@ -127,21 +129,18 @@ export const careerLog: {
       level: "INFO",
       period: "2025.08 → 2026.09",
       org: "Apple",
-      role: "— Observability Lead · contract via Arvik Strategies",
       body: "Led a team of 10 migrating enterprise telemetry from Datadog to Apple's internal Prometheus platform (MOSAIC): 1,000+ dashboards and 1,000+ alert rules with zero disruption to production monitoring. Built an LLM-driven transformation pipeline on the Claude Code API and MCP that cut manual migration effort by 70–80%, and moved every observability asset into GitOps with CI/CD-deployed dashboards, alerts, and recording rules.",
     },
     {
       level: "INFO",
       period: "2021.06 → 2025.08",
       org: "Freddie Mac",
-      role: "— ELK / Observability Engineer (Lead)",
       body: "Ran the enterprise logging and monitoring platform: migrated self-managed ELK on EKS to Elastic Cloud with zero data loss, built Prometheus federation and telemetry pipelines, defined SLIs/SLOs with error budgets, carried the on-call rotation with documented runbooks, and executed yearly cross-region DR failover exercises.",
     },
     {
       level: "INFO",
       period: "2019.06 → 2021.05",
       org: "T-Mobile",
-      role: "— ELK DevOps Engineer / Kafka Admin",
       body: "Administered Elasticsearch and Confluent Kafka clusters across all environments — RBAC and SSL/SASL hardening, partition rebalancing and broker operations, plus custom Prometheus exporters for consumer lag and replication health.",
     },
   ],
