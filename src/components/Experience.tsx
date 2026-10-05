@@ -1,4 +1,5 @@
 import { careerLog } from "@/data/content";
+import { postForOrg } from "@/data/blog";
 import Reveal from "./Reveal";
 
 const levelStyles: Record<string, string> = {
@@ -22,7 +23,9 @@ export default function Experience() {
           </div>
         </Reveal>
         <div className="flex flex-col gap-5">
-          {careerLog.entries.map((e, i) => (
+          {careerLog.entries.map((e, i) => {
+            const deepDive = postForOrg(e.org);
+            return (
             <Reveal key={e.org + e.period} delay={i * 70}>
               <div className="flex flex-col gap-4 rounded-[14px] border border-base-700/60 bg-base-950/80 px-[30px] py-[26px] sm:flex-row sm:gap-7">
                 <div className="mono w-[170px] shrink-0 pt-[3px] text-[13px] text-ink-muted">
@@ -39,10 +42,19 @@ export default function Experience() {
                     {e.role && <span className="text-[15px] text-ink-muted">{e.role}</span>}
                   </div>
                   <div className="text-[15px] leading-[1.65] text-ink-muted">{e.body}</div>
+                  {deepDive && (
+                    <a
+                      href={`/blog/${deepDive.slug}`}
+                      className="mono w-fit text-[13px] text-accent transition-colors hover:text-accent-dim"
+                    >
+                      read the deep dive →
+                    </a>
+                  )}
                 </div>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
           <Reveal delay={careerLog.entries.length * 70}>
             <div className="mono flex items-center gap-3 px-[30px] py-4 text-[13px] text-ink-faint">
               <span className="text-signal-warn">WARN</span>
