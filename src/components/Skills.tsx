@@ -1,4 +1,5 @@
 import { skills } from "@/data/content";
+import { postForSkill } from "@/data/blog";
 import Reveal from "./Reveal";
 
 export default function Skills() {
@@ -32,14 +33,26 @@ export default function Skills() {
                   </svg>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {g.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-lg bg-ink-faint/15 px-3 py-[7px] text-[13px] text-ink"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {g.items.map((item) => {
+                    const deepDive = postForSkill(item);
+                    return deepDive ? (
+                      <a
+                        key={item}
+                        href={`/blog/${deepDive.slug}`}
+                        title={`deep dive: ${deepDive.title}`}
+                        className="rounded-lg bg-accent/10 px-3 py-[7px] text-[13px] text-accent transition-colors hover:bg-accent/20"
+                      >
+                        {item} ↗
+                      </a>
+                    ) : (
+                      <span
+                        key={item}
+                        className="rounded-lg bg-ink-faint/15 px-3 py-[7px] text-[13px] text-ink"
+                      >
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
                 <div className="mono mt-auto text-xs text-ink-faint">
                   state: <span className="text-accent">{g.state}</span>
