@@ -15,6 +15,8 @@ import "@fontsource/mr-dafoe/400.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  // Absolute base for og:image / twitter:image URLs in link previews.
+  metadataBase: new URL("https://vikas.rulesoverresults.com"),
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
   openGraph: {
