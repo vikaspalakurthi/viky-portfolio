@@ -150,6 +150,63 @@ export const careerLog: {
 };
 
 // ---------------------------------------------------------------------------
+//  CREDENTIALS — education + certification history. Certs are listed with
+//  their actual validity windows (all associate-era, now expired) because
+//  this site doesn't badge-wave: the production record above is the
+//  credential. IDs shown so anyone can verify.
+// ---------------------------------------------------------------------------
+export type CertRow = {
+  name: string;
+  period?: string; // validity window; omitted when unknown
+  id?: string; // public validation code / credential id
+  href?: string; // direct verification page, when one exists
+};
+
+export const credentials = {
+  command: "$ ls -la ~/credentials/",
+  heading: "Paper trail.",
+  sub: "Degrees and certifications, dated honestly — the current credential is the production record above.",
+  education: {
+    tag: "EDUCATION",
+    rows: [
+      {
+        name: "M.S. Computer Science",
+        org: "Texas A&M University — Corpus Christi",
+        detail: "2016 · GPA 3.8",
+      },
+    ],
+  },
+  certifications: {
+    tag: "CERTIFICATION HISTORY",
+    verify: {
+      label: "verify AWS codes ↗",
+      href: "https://cp.certmetrics.com/amazon/en/public/verify/credential",
+    },
+    rows: [
+      {
+        name: "AWS Certified SysOps Administrator — Associate",
+        period: "2018 → 2021",
+        id: "N1W4HNT2LF111P9J",
+      },
+      {
+        name: "AWS Certified Developer — Associate",
+        period: "2018 → 2021",
+        id: "D4Q4XQGKLFV4QEW2",
+      },
+      {
+        name: "AWS Certified Cloud Practitioner",
+      },
+      {
+        name: "Docker Certified Associate",
+        period: "2018 → 2020",
+        id: "12258973",
+        href: "https://www.credential.net/12258973",
+      },
+    ] as CertRow[],
+  },
+};
+
+// ---------------------------------------------------------------------------
 //  SERVICES  — self-built products rendered as running services.
 // ---------------------------------------------------------------------------
 export type Service = {
